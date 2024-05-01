@@ -1,0 +1,29 @@
+
+Training model:
+Traceback (most recent call last):
+  File "/raid/home/automathon_2024/account8/.local/lib/python3.10/site-packages/torchinfo/torchinfo.py", line 295, in forward_pass
+    _ = model(*x, **kwargs)
+  File "/raid/home/automathon_2024/account8/.local/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1532, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/raid/home/automathon_2024/account8/.local/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1582, in _call_impl
+    result = forward_call(*args, **kwargs)
+  File "/raid/home/automathon_2024/account8/automathon-2024/run.py", line 245, in forward
+    x = self.relu(self.bn1(self.conv1(x)))
+  File "/raid/home/automathon_2024/account8/.local/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1532, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/raid/home/automathon_2024/account8/.local/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1582, in _call_impl
+    result = forward_call(*args, **kwargs)
+  File "/raid/home/automathon_2024/account8/.local/lib/python3.10/site-packages/torch/nn/modules/conv.py", line 610, in forward
+    return self._conv_forward(input, self.weight, self.bias)
+  File "/raid/home/automathon_2024/account8/.local/lib/python3.10/site-packages/torch/nn/modules/conv.py", line 605, in _conv_forward
+    return F.conv3d(
+RuntimeError: expected stride to be a single integer value or a list of 4 values to match the convolution dimensions, but got stride=[1, 1, 1]
+The above exception was the direct cause of the following exception:
+Traceback (most recent call last):
+  File "/raid/home/automathon_2024/account8/automathon-2024/run.py", line 301, in <module>
+    summary(model, input_size=(batch_size, 3, 10, 256, 256))
+  File "/raid/home/automathon_2024/account8/.local/lib/python3.10/site-packages/torchinfo/torchinfo.py", line 223, in summary
+    summary_list = forward_pass(
+  File "/raid/home/automathon_2024/account8/.local/lib/python3.10/site-packages/torchinfo/torchinfo.py", line 304, in forward_pass
+    raise RuntimeError(
+RuntimeError: Failed to run torchinfo. See above stack traces for more details. Executed layers up to: []
