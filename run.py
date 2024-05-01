@@ -387,7 +387,7 @@ early_stopping = EarlyStopping(patience=3, verbose=True)
 #for p in model.parameters():
 #    p.requires_grad = False
 #loader = DataLoader(experimental_dataset, batch_size=2, shuffle=True)
-'''
+
 print("Training...")
 for epoch in range(epochs):
     for sample in tqdm(loader):
@@ -397,12 +397,13 @@ for epoch in range(epochs):
         X = X.to(device)
         label = label.to(device)
         label_pred = model(X)
+        print("predicted_label:",label_pred)    
         label = torch.unsqueeze(label,dim=1)
         loss = loss_fn(label, label_pred) #+ model.l1_loss()
         loss.backward()
         optimizer.step()
         run.log({"loss": loss.item(), "epoch": epoch,"L1 loss": model.l1_loss()})
-'''
+
 
 ## TEST
 
