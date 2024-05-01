@@ -213,10 +213,10 @@ class VideoDataset(Dataset):
 
         ID = self.ids[self.video_files[idx]]
         if self.dataset_choice == "test":
-            return video, ID
+            return video[0], ID
         else:
             label = self.data[self.video_files[idx]]
-            return video, label, ID
+            return video[0], label, ID
 
 
 
@@ -375,6 +375,7 @@ optimizer = torch.optim.Adam(model.parameters(), lr=0.001)
 batch_size = 32
 loss_fn = nn.CrossEntropyLoss()#nn.MSELoss()
 #model = DeepfakeDetector().to(device)
+
 print("Training model:")
 summary(model, input_size=(batch_size, 10, 3, 256, 256))
 epochs = 2
@@ -382,11 +383,11 @@ loader = DataLoader(train_dataset, batch_size=batch_size, shuffle=True)
 
 early_stopping = EarlyStopping(patience=3, verbose=True)
 
-'''
-for p in model.parameters():
-    p.requires_grad = False'''
-#loader = DataLoader(experimental_dataset, batch_size=2, shuffle=True)
 
+#for p in model.parameters():
+#    p.requires_grad = False
+#loader = DataLoader(experimental_dataset, batch_size=2, shuffle=True)
+'''
 print("Training...")
 for epoch in range(epochs):
     for sample in tqdm(loader):
@@ -401,7 +402,7 @@ for epoch in range(epochs):
         loss.backward()
         optimizer.step()
         run.log({"loss": loss.item(), "epoch": epoch,"L1 loss": model.l1_loss()})
-        
+'''
 
 ## TEST
 
