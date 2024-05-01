@@ -288,6 +288,10 @@ class CNNVideoClassifier(nn.Module):
         self.relu = nn.LeakyReLU()
         
         self.drop = nn.Dropout(0.2)
+        
+        self.sigmoid = nn.Sigmoid()
+        
+        self.l1_lambda = 0.001
 
     def forward(self, x):
         x = self.relu(self.bn1(self.conv1(x)))
@@ -302,7 +306,15 @@ class CNNVideoClassifier(nn.Module):
         x = x.view(x.size(0), -1)  # Flatten preserving the batch dimension
         x = self.relu(self.fc1(x))
         x = self.fc2(x)
+        x = self.sigmoid(x)
         return x
+    
+    def l1_loss(self):
+        l1_reg = torch.tensor(0., requires_grad=True)
+        for name, param in self.named_parameters():
+            if 'weight' in name:
+                l1_reg = l1_reg + torch.norm(param, p=1)
+        return self.l1_lambda * l1_reg
 
 
 
@@ -346,7 +358,7 @@ model = CNNVideoClassifier(num_classes=2).to(device)  # Change num_classes accor
 # Define loss function and optimizer
 optimizer = torch.optim.Adam(model.parameters(), lr=0.001)
 batch_size = 32
-loss_fn = nn.MSELoss()
+loss_fn = nn.CrossEntropyLoss()#nn.MSELoss()
 #model = DeepfakeDetector().to(device)
 print("Training model:")
 summary(model, input_size=(batch_size, 10, 3, 256, 256))
