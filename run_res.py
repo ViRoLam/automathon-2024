@@ -151,7 +151,7 @@ use_small_dataset = True
 if use_small_dataset:
     dataset_dir = resized_dir
 
-nb_frames = 10
+nb_frames = 1
 
 class VideoDataset(Dataset):
     """
@@ -226,9 +226,9 @@ transform = transforms.Compose([
     transforms.Normalize(mean=[0.485, 0.456, 0.406], std=[0.229, 0.224, 0.225]),
 ])
 
-train_dataset = VideoDataset(dataset_dir, dataset_choice="train", nb_frames=nb_frames, transform=transform)
-test_dataset = VideoDataset(dataset_dir, dataset_choice="test", nb_frames=nb_frames, transform=transform)
-experimental_dataset = VideoDataset(dataset_dir, dataset_choice="experimental", nb_frames=nb_frames, transform=transform)
+train_dataset = VideoDataset(dataset_dir, dataset_choice="train", nb_frames=nb_frames)
+test_dataset = VideoDataset(dataset_dir, dataset_choice="test", nb_frames=nb_frames)
+experimental_dataset = VideoDataset(dataset_dir, dataset_choice="experimental", nb_frames=nb_frames)
 
 
 # MODELE
