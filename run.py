@@ -220,6 +220,59 @@ experimental_dataset = VideoDataset(dataset_dir, dataset_choice="experimental", 
 
 # MODELE
 
+class CNNVideoClassifier(nn.Module):
+    def __init__(self, num_classes):
+        super(CNNVideoClassifier, self).__init__()
+        self.conv1 = nn.Conv3d(3, 64, kernel_size=(3, 3, 3), padding=(1, 1, 1))
+        self.bn1 = nn.BatchNorm3d(64)
+        self.conv2 = nn.Conv3d(64, 128, kernel_size=(3, 3, 3), padding=(1, 1, 1))
+        self.bn2 = nn.BatchNorm3d(128)
+        self.conv3 = nn.Conv3d(128, 256, kernel_size=(3, 3, 3), padding=(1, 1, 1))
+        self.bn3 = nn.BatchNorm3d(256)
+        self.conv4 = nn.Conv3d(256, 512, kernel_size=(3, 3, 3), padding=(1, 1, 1))
+        self.bn4 = nn.BatchNorm3d(512)
+        self.conv5 = nn.Conv3d(512, 512, kernel_size=(3, 3, 3), padding=(1, 1, 1))
+        self.bn5 = nn.BatchNorm3d(512)
+        self.pool = nn.MaxPool3d(kernel_size=(1, 2, 2), stride=(1, 2, 2))
+        self.fc1 = nn.Linear(512 * 4 * 4, 4096)
+        self.fc2 = nn.Linear(4096, 4096)
+        self.fc3 = nn.Linear(4096, num_classes)
+        self.relu = nn.ReLU()
+        self.dropout = nn.Dropout(p=0.5)
+
+    def forward(self, x):
+        x = self.relu(self.bn1(self.conv1(x)))
+        x = self.pool(x)
+        x = self.relu(self.bn2(self.conv2(x)))
+        x = self.pool(x)
+        x = self.relu(self.bn3(self.conv3(x)))
+        x = self.pool(x)
+        x = self.relu(self.bn4(self.conv4(x)))
+        x = self.pool(x)
+        x = self.relu(self.bn5(self.conv5(x)))
+        x = self.pool(x)
+        x = x.view(-1, 512 * 4 * 4)
+        x = self.dropout(x)
+        x = self.relu(self.fc1(x))
+        x = self.dropout(x)
+        x = self.relu(self.fc2(x))
+        x = self.fc3(x)
+        return x
+
+# Example usage:
+# Define your video classification model
+model = CNNVideoClassifier(num_classes=10)  # Change num_classes according to your dataset
+# Define loss function and optimizer
+optimizer = torch.optim.Adam(model.parameters(), lr=0.001)
+
+# Assuming you have your video dataset loaded into DataLoader
+# for batch_idx, (inputs, targets) in enumerate(train_loader):
+#     optimizer.zero_grad()
+#     outputs = model(inputs)
+#     loss = criterion(outputs, targets)
+#     loss.backward()
+#     optimizer.step()
+
 class DeepfakeDetector(nn.Module):
     def __init__(self, nb_frames=10):
         super().__init__()
@@ -246,10 +299,9 @@ run = wandb.init(
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 batch_size = 32
 loss_fn = nn.MSELoss()
-model = DeepfakeDetector().to(device)
+#model = DeepfakeDetector().to(device)
 print("Training model:")
 summary(model, input_size=(batch_size, 3, 10, 256, 256))
-optimizer = torch.optim.Adam(model.parameters(), lr=0.001)
 epochs = 5
 loader = DataLoader(train_dataset, batch_size=batch_size, shuffle=True)
 #loader = DataLoader(experimental_dataset, batch_size=2, shuffle=True)
@@ -265,6 +317,7 @@ for epoch in range(epochs):
         label = torch.unsqueeze(label,dim=1)
         loss = loss_fn(label, label_pred)
         loss.backward()
+        score = 0
         optimizer.step()
         run.log({"loss": loss.item(), "epoch": epoch})
 
