@@ -256,11 +256,7 @@ class CNNVideoClassifier(nn.Module):
         return x
 
 
-# Example usage:
-# Define your video classification model
-model = CNNVideoClassifier(num_classes=2)  # Change num_classes according to your dataset
-# Define loss function and optimizer
-optimizer = torch.optim.Adam(model.parameters(), lr=0.001)
+
 
 # Assuming you have your video dataset loaded into DataLoader
 # for batch_idx, (inputs, targets) in enumerate(train_loader):
@@ -294,11 +290,17 @@ run = wandb.init(
 # ENTRAINEMENT
 
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
-batch_size = 32
+
+# Example usage:
+# Define your video classification model
+model = CNNVideoClassifier(num_classes=2).to(device)  # Change num_classes according to your dataset
+# Define loss function and optimizer
+optimizer = torch.optim.Adam(model.parameters(), lr=0.001)
+batch_size = 1
 loss_fn = nn.MSELoss()
 #model = DeepfakeDetector().to(device)
 print("Training model:")
-summary(model, input_size=(batch_size, 3, 10, 256, 256))
+summary(model, input_size=(batch_size, 10, 3, 256, 256))
 epochs = 5
 loader = DataLoader(train_dataset, batch_size=batch_size, shuffle=True)
 for p in model.parameters():
