@@ -213,10 +213,10 @@ class VideoDataset(Dataset):
 
         ID = self.ids[self.video_files[idx]]
         if self.dataset_choice == "test":
-            return video[0], ID
+            return video, ID
         else:
             label = self.data[self.video_files[idx]]
-            return video[0], label, ID
+            return video, label, ID
 
 
 
