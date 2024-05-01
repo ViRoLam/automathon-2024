@@ -213,10 +213,10 @@ class VideoDataset(Dataset):
 
         ID = self.ids[self.video_files[idx]]
         if self.dataset_choice == "test":
-            return video, ID
+            return video[0], ID
         else:
             label = self.data[self.video_files[idx]]
-            return video, label, ID
+            return video[0], label, ID
 
 
 
@@ -305,6 +305,7 @@ class CNNVideoClassifier(nn.Module):
         x = self.drop(x)
         x = x.view(x.size(0), -1)  # Flatten preserving the batch dimension
         x = self.relu(self.fc1(x))
+        x = self.drop(x)
         x = self.fc2(x)
         x = self.sigmoid(x)
         return x
@@ -384,9 +385,8 @@ for epoch in range(epochs):
         label = torch.unsqueeze(label,dim=1)
         loss = loss_fn(label, label_pred) + model.l1_loss()
         loss.backward()
-        score = 0
         optimizer.step()
-        run.log({"loss": loss.item(), "epoch": epoch})
+        run.log({"loss": loss.item(), "epoch": epoch,"L1 loss": model.l1_loss()})
         
 
 ## TEST
