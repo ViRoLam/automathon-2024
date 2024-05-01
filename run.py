@@ -227,6 +227,10 @@ experimental_dataset = VideoDataset(dataset_dir, dataset_choice="experimental", 
 
 # MODELE
 
+#On va équilibrer le dataset
+print("Nombre de deepake:",sum([train_dataset.ids[k] for k in train_dataset.ids]))
+print("Nombre d'images:",len(train_dataset.ids))
+
 
 class EarlyStopping:
     def __init__(self, patience=7, verbose=False, delta=0):
@@ -401,6 +405,7 @@ for sample in tqdm(loader):
     X = X.to(device)
     label_pred = model(X)
     ids.extend(list(ID))
+    print("predicted_label:",label_pred)
     pred = (label_pred > 0.5).long()
     pred = pred.cpu().detach().numpy().tolist()
     labels.extend(pred)
