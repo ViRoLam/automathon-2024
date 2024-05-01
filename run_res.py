@@ -88,7 +88,7 @@ def resize_data(data, new_height, new_width, x=0, y=0, height=None, width=None):
 
 dataset_dir = "/raid/datasets/hackathon2024"
 root_dir = os.path.expanduser("~/automathon-2024")
-nb_frames = 10
+nb_frames = 1
 
 ## MAKE RESIZED DATASET
 resized_dir = os.path.join(dataset_dir, "resized_dataset")
@@ -151,7 +151,6 @@ use_small_dataset = True
 if use_small_dataset:
     dataset_dir = resized_dir
 
-nb_frames = 1
 
 class VideoDataset(Dataset):
     """
@@ -213,10 +212,10 @@ class VideoDataset(Dataset):
 
         ID = self.ids[self.video_files[idx]]
         if self.dataset_choice == "test":
-            return video, ID
+            return video[0], ID
         else:
             label = self.data[self.video_files[idx]]
-            return video, label, ID
+            return video[0], label, ID
 
 
 # Define transformations
@@ -231,121 +230,7 @@ test_dataset = VideoDataset(dataset_dir, dataset_choice="test", nb_frames=nb_fra
 experimental_dataset = VideoDataset(dataset_dir, dataset_choice="experimental", nb_frames=nb_frames)
 
 
-# MODELE
 
-
-class EarlyStopping:
-    def __init__(self, patience=7, verbose=False, delta=0):
-        """
-        Args:
-            patience (int): Combien d'époques à attendre après la dernière fois où la performance a été améliorée.
-                            Le compteur d'attente est remis à zéro après une amélioration.
-            verbose (bool): Si vrai, imprime un message à chaque amélioration.
-            delta (float): Seuil minimal d'amélioration pour considérer qu'il y a une amélioration.
-        """
-        self.patience = patience
-        self.verbose = verbose
-        self.counter = 0
-        self.best_score = None
-        self.early_stop = False
-        self.val_loss_min = float('inf')
-        self.delta = delta
-
-    def __call__(self, val_loss, model):
-        score = -val_loss
-
-        if self.best_score is None:
-            self.best_score = score
-        elif score < self.best_score + self.delta:
-            self.counter += 1
-            if self.verbose:
-                print(f'EarlyStopping counter: {self.counter} out of {self.patience}')
-            if self.counter >= self.patience:
-                self.early_stop = True
-        else:
-            self.best_score = score
-            self.counter = 0
-            self.val_loss_min = val_loss
-            # Sauvegardez le meilleur modèle
-            torch.save(model.state_dict(), 'checkpoint.pt')
-            if self.verbose:
-                print(f'Validation loss decreased ({self.val_loss_min:.6f} --> {val_loss:.6f}).  Saving model ...')
-
-class CNNVideoClassifier(nn.Module):
-    def __init__(self, num_classes):
-        super(CNNVideoClassifier, self).__init__()
-        self.conv1 = nn.Conv3d(10, 16, kernel_size=(3, 3, 3), stride=(1, 1, 1), padding=(1, 1, 1))
-        self.bn1 = nn.BatchNorm3d(16)
-        self.pool1 = nn.MaxPool3d(kernel_size=(1, 2, 2), stride=(1, 2, 2))
-        
-        self.conv2 = nn.Conv3d(16, 32, kernel_size=(3, 3, 3), stride=(1, 1, 1), padding=(1, 1, 1))
-        self.bn2 = nn.BatchNorm3d(32)
-        self.pool2 = nn.MaxPool3d(kernel_size=(1, 2, 2), stride=(1, 2, 2))
-        
-        
-        self.conv3 = nn.Conv3d(32, 64, kernel_size=(3, 3, 3), stride=(1, 1, 1), padding=(1, 1, 1))
-        self.bn3 = nn.BatchNorm3d(64)
-        self.pool3 = nn.MaxPool3d(kernel_size=(1, 2, 2), stride=(1, 2, 2))
-
-        # The output from the last pooling layer will have dimensions [batch_size, 64, 10, 32, 32]
-        self.fc1 = nn.Linear(64*32*32*3, 512)
-        self.fc2 = nn.Linear(512, num_classes-1)
-
-        self.relu = nn.LeakyReLU()
-        
-        self.drop = nn.Dropout(0.2)
-        
-        self.sigmoid = nn.Sigmoid()
-        
-        self.l1_lambda = 0.0005
-
-    def forward(self, x):
-        x = self.relu(self.bn1(self.conv1(x)))
-        x = self.pool1(x)
-        x = self.relu(self.bn2(self.conv2(x)))
-        x = self.pool2(x)
-        x = self.relu(self.bn3(self.conv3(x)))
-        x = self.pool3(x)
-        
-        # Flatten the output for the fully connected layer
-        x = x.view(x.size(0), -1)  # Flatten preserving the batch dimension
-        x = self.relu(self.fc1(x))
-        x = self.drop(x)
-        x = self.fc2(x)
-        x = self.sigmoid(x)
-        return x
-    
-    def l1_loss(self):
-        l1_reg = torch.tensor(0., requires_grad=True)
-        for name, param in self.named_parameters():
-            if 'weight' in name:
-                l1_reg = l1_reg + torch.norm(param, p=1)
-        return self.l1_lambda * l1_reg
-
-
-
-
-# Assuming you have your video dataset loaded into DataLoader
-# for batch_idx, (inputs, targets) in enumerate(train_loader):
-#     optimizer.zero_grad()
-#     outputs = model(inputs)
-#     loss = criterion(outputs, targets)
-#     loss.backward()
-#     optimizer.step()
-'''
-class DeepfakeDetector(nn.Module):
-    def __init__(self, nb_frames=10):
-        super().__init__()
-        self.dense = nn.Linear(nb_frames*3*256*256,1)
-        self.flat = nn.Flatten()
-        self.sigmoid = nn.Sigmoid()
-
-    def forward(self, x):
-        y = self.flat(x)
-        y = self.dense(y)
-        y = self.sigmoid(y)
-        return y
-'''
 # LOGGING
 
 wandb.login(key="09f8b3f5e76020d7c21ddcfc5f20869c998b143e")
