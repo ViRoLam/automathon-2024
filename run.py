@@ -223,7 +223,7 @@ experimental_dataset = VideoDataset(dataset_dir, dataset_choice="experimental", 
 class CNNVideoClassifier(nn.Module):
     def __init__(self, num_classes):
         super(CNNVideoClassifier, self).__init__()
-        self.conv1 = nn.Conv3d(32, 32, kernel_size=(3, 3, 3, 3), stride=(1, 1, 1), padding=(1, 1, 1))
+        self.conv1 = nn.Conv3d(32, 32, kernel_size=(3, 3, 3, 3), stride=(1, 1, 1,1), padding=(1, 1, 1,1))
         self.bn1 = nn.BatchNorm3d(32)
         self.pool1 = nn.MaxPool3d(kernel_size=(1, 2, 2), stride=(1, 2, 2))
         
