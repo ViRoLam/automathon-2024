@@ -362,7 +362,7 @@ batch_size = 32
 loss_fn = nn.CrossEntropyLoss()#nn.MSELoss()
 #model = DeepfakeDetector().to(device)
 print("Training model:")
-summary(model, input_size=(batch_size, 1, 3, 256, 256))
+summary(model, input_size=(batch_size, 3, 256, 256))
 epochs = 2
 loader = DataLoader(train_dataset, batch_size=batch_size, shuffle=True)
 
