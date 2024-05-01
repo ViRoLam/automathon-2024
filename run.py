@@ -228,8 +228,8 @@ experimental_dataset = VideoDataset(dataset_dir, dataset_choice="experimental", 
 # MODELE
 
 #On va équilibrer le dataset
-print("Nombre de deepake:",sum([int(k) for k in train_dataset.ids]))
-print("Nombre d'images:",len(train_dataset.ids))
+print("Nombre de deepake:",sum([int(k) for k in train_dataset.data]))
+print("Nombre d'images:",len(train_dataset.data))
 
 
 class EarlyStopping:
