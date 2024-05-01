@@ -229,7 +229,7 @@ experimental_dataset = VideoDataset(dataset_dir, dataset_choice="experimental", 
 
 #On va équilibrer le dataset
 print(list(train_dataset.data.values()))
-print("Nombre de deepake:",sum([int(torch.unsqueeze(k,dim=1)) for k in list(train_dataset.data.values())]))
+print("Nombre de deepake:",sum([int(torch.unsqueeze(k,dim=0)) for k in list(train_dataset.data.values())]))
 print("Nombre d'images:",len(train_dataset.data))
 
 
