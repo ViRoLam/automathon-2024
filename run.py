@@ -302,7 +302,6 @@ class CNNVideoClassifier(nn.Module):
         x = self.pool3(x)
         
         # Flatten the output for the fully connected layer
-        x = self.drop(x)
         x = x.view(x.size(0), -1)  # Flatten preserving the batch dimension
         x = self.relu(self.fc1(x))
         x = self.drop(x)
