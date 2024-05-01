@@ -314,6 +314,7 @@ for epoch in range(epochs):
     for sample in tqdm(loader):
         optimizer.zero_grad()
         X, label, ID = sample
+        print("X_shape:",X.shape)
         X = X.to(device)
         label = label.to(device)
         label_pred = model(X)
