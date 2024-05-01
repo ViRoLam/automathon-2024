@@ -13,7 +13,6 @@ from tqdm import tqdm
 import csv
 import timm
 import wandb
-import cv2 
 
 from PIL import Image
 import torchvision.transforms.v2 as transforms
