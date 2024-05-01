@@ -223,20 +223,21 @@ experimental_dataset = VideoDataset(dataset_dir, dataset_choice="experimental", 
 class CNNVideoClassifier(nn.Module):
     def __init__(self, num_classes):
         super(CNNVideoClassifier, self).__init__()
-        self.conv1 = nn.Conv3d(3, 64, kernel_size=(3, 3, 3), padding=(1, 1, 1))
-        self.bn1 = nn.BatchNorm3d(64)
-        self.conv2 = nn.Conv3d(64, 128, kernel_size=(3, 3, 3), padding=(1, 1, 1))
-        self.bn2 = nn.BatchNorm3d(128)
-        self.conv3 = nn.Conv3d(128, 256, kernel_size=(3, 3, 3), padding=(1, 1, 1))
-        self.bn3 = nn.BatchNorm3d(256)
-        self.conv4 = nn.Conv3d(256, 512, kernel_size=(3, 3, 3), padding=(1, 1, 1))
-        self.bn4 = nn.BatchNorm3d(512)
-        self.conv5 = nn.Conv3d(512, 512, kernel_size=(3, 3, 3), padding=(1, 1, 1))
-        self.bn5 = nn.BatchNorm3d(512)
+        self.conv1 = nn.Conv3d(3, 32, kernel_size=(3, 3, 3), padding=(1, 1, 1))
+        self.bn1 = nn.BatchNorm3d(32)
+        self.conv2 = nn.Conv3d(32, 64, kernel_size=(3, 3, 3), padding=(1, 1, 1))
+        self.bn2 = nn.BatchNorm3d(64)
+        self.conv3 = nn.Conv3d(64, 128, kernel_size=(3, 3, 3), padding=(1, 1, 1))
+        self.bn3 = nn.BatchNorm3d(128)
+        self.conv4 = nn.Conv3d(128, 256, kernel_size=(3, 3, 3), padding=(1, 1, 1))
+        self.bn4 = nn.BatchNorm3d(256)
+        self.conv5 = nn.Conv3d(256, 256, kernel_size=(3, 3, 3), padding=(1, 1, 1))
+        self.bn5 = nn.BatchNorm3d(256)
+        # Other layers unchanged for simplicity
         self.pool = nn.MaxPool3d(kernel_size=(1, 2, 2), stride=(1, 2, 2))
-        self.fc1 = nn.Linear(512 * 4 * 4, 4096)
-        self.fc2 = nn.Linear(4096, 4096)
-        self.fc3 = nn.Linear(4096, num_classes)
+        self.fc1 = nn.Linear(256 * 4 * 4, 2048)
+        self.fc2 = nn.Linear(2048, 2048)
+        self.fc3 = nn.Linear(2048, num_classes)
         self.relu = nn.ReLU()
         self.dropout = nn.Dropout(p=0.5)
 
@@ -261,7 +262,7 @@ class CNNVideoClassifier(nn.Module):
 
 # Example usage:
 # Define your video classification model
-model = CNNVideoClassifier(num_classes=10)  # Change num_classes according to your dataset
+model = CNNVideoClassifier(num_classes=2)  # Change num_classes according to your dataset
 # Define loss function and optimizer
 optimizer = torch.optim.Adam(model.parameters(), lr=0.001)
 
@@ -304,6 +305,8 @@ print("Training model:")
 summary(model, input_size=(batch_size, 3, 10, 256, 256))
 epochs = 5
 loader = DataLoader(train_dataset, batch_size=batch_size, shuffle=True)
+for p in model.parameters():
+    p.requires_grad = False
 #loader = DataLoader(experimental_dataset, batch_size=2, shuffle=True)
 
 print("Training...")
