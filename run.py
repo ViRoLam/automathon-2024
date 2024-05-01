@@ -235,7 +235,7 @@ class CNNVideoClassifier(nn.Module):
         self.bn5 = nn.BatchNorm3d(256)
         # Other layers unchanged for simplicity
         self.pool = nn.MaxPool3d(kernel_size=(1, 2, 2), stride=(1, 2, 2))
-        self.fc1 = nn.Linear(256 * 4 * 4, 2048)
+        self.fc1 = nn.Linear(512 * 4 * 4, 2048)
         self.fc2 = nn.Linear(2048, 2048)
         self.fc3 = nn.Linear(2048, num_classes)
         self.relu = nn.ReLU()
