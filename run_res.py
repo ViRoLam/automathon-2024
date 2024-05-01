@@ -263,7 +263,6 @@ summary(model, input_size=(batch_size, 3, 256, 256))
 epochs = 2
 loader = DataLoader(train_dataset, batch_size=batch_size, shuffle=True)
 
-early_stopping = EarlyStopping(patience=3, verbose=True)
 
 '''
 for p in model.parameters():
