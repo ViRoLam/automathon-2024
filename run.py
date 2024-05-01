@@ -282,7 +282,7 @@ class CNNVideoClassifier(nn.Module):
         self.pool3 = nn.MaxPool3d(kernel_size=(1, 2, 2), stride=(1, 2, 2))
 
         # The output from the last pooling layer will have dimensions [batch_size, 64, 10, 32, 32]
-        self.fc1 = nn.Linear(64*64*32*3, 512)
+        self.fc1 = nn.Linear(64*32*32*3, 512)
         self.fc2 = nn.Linear(512, num_classes-1)
 
         self.relu = nn.LeakyReLU()
