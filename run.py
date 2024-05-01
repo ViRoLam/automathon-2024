@@ -220,6 +220,44 @@ experimental_dataset = VideoDataset(dataset_dir, dataset_choice="experimental", 
 
 # MODELE
 
+
+class EarlyStopping:
+    def __init__(self, patience=7, verbose=False, delta=0):
+        """
+        Args:
+            patience (int): Combien d'époques à attendre après la dernière fois où la performance a été améliorée.
+                            Le compteur d'attente est remis à zéro après une amélioration.
+            verbose (bool): Si vrai, imprime un message à chaque amélioration.
+            delta (float): Seuil minimal d'amélioration pour considérer qu'il y a une amélioration.
+        """
+        self.patience = patience
+        self.verbose = verbose
+        self.counter = 0
+        self.best_score = None
+        self.early_stop = False
+        self.val_loss_min = float('inf')
+        self.delta = delta
+
+    def __call__(self, val_loss, model):
+        score = -val_loss
+
+        if self.best_score is None:
+            self.best_score = score
+        elif score < self.best_score + self.delta:
+            self.counter += 1
+            if self.verbose:
+                print(f'EarlyStopping counter: {self.counter} out of {self.patience}')
+            if self.counter >= self.patience:
+                self.early_stop = True
+        else:
+            self.best_score = score
+            self.counter = 0
+            self.val_loss_min = val_loss
+            # Sauvegardez le meilleur modèle
+            torch.save(model.state_dict(), 'checkpoint.pt')
+            if self.verbose:
+                print(f'Validation loss decreased ({self.val_loss_min:.6f} --> {val_loss:.6f}).  Saving model ...')
+
 class CNNVideoClassifier(nn.Module):
     def __init__(self, num_classes):
         super(CNNVideoClassifier, self).__init__()
@@ -241,6 +279,8 @@ class CNNVideoClassifier(nn.Module):
         self.fc2 = nn.Linear(512, num_classes-1)
 
         self.relu = nn.ReLU()
+        
+        self.drop = nn.Dropout(0.5)
 
     def forward(self, x):
         x = self.relu(self.bn1(self.conv1(x)))
@@ -251,6 +291,7 @@ class CNNVideoClassifier(nn.Module):
         #x = self.pool3(x)
         
         # Flatten the output for the fully connected layer
+        x = self.drop(x)
         x = x.view(x.size(0), -1)  # Flatten preserving the batch dimension
         x = self.relu(self.fc1(x))
         x = self.fc2(x)
@@ -266,7 +307,7 @@ class CNNVideoClassifier(nn.Module):
 #     loss = criterion(outputs, targets)
 #     loss.backward()
 #     optimizer.step()
-
+'''
 class DeepfakeDetector(nn.Module):
     def __init__(self, nb_frames=10):
         super().__init__()
@@ -279,7 +320,7 @@ class DeepfakeDetector(nn.Module):
         y = self.dense(y)
         y = self.sigmoid(y)
         return y
-
+'''
 # LOGGING
 
 wandb.login(key="09f8b3f5e76020d7c21ddcfc5f20869c998b143e")
@@ -304,6 +345,9 @@ print("Training model:")
 summary(model, input_size=(batch_size, 10, 3, 256, 256))
 epochs = 5
 loader = DataLoader(train_dataset, batch_size=batch_size, shuffle=True)
+
+early_stopping = EarlyStopping(patience=3, verbose=True)
+
 '''
 for p in model.parameters():
     p.requires_grad = False'''
@@ -314,7 +358,7 @@ for epoch in range(epochs):
     for sample in tqdm(loader):
         optimizer.zero_grad()
         X, label, ID = sample
-        print("X_shape:",X.shape)
+        #print("X_shape:",X.shape)
         X = X.to(device)
         label = label.to(device)
         label_pred = model(X)
@@ -324,6 +368,7 @@ for epoch in range(epochs):
         score = 0
         optimizer.step()
         run.log({"loss": loss.item(), "epoch": epoch})
+        
 
 ## TEST
 
