@@ -228,9 +228,19 @@ experimental_dataset = VideoDataset(dataset_dir, dataset_choice="experimental", 
 # MODELE
 
 #On va équilibrer le dataset
-print(list(train_dataset.data.values()))
+#print(list(train_dataset.data.values()))
 print("Nombre de deepake:",sum([int(torch.unsqueeze(k,dim=0)) for k in list(train_dataset.data.values())]))
 print("Nombre d'images:",len(train_dataset.data))
+
+#On va vérifier qu'on a bien des images différentes
+video1 = train_dataset[0][0]
+for k in range(len(train_dataset)):
+    video2 = train_dataset[k][0]
+    if torch.all(video1 == video2):
+        print("Vidéos identiques")
+        
+    
+        
 
 
 class EarlyStopping:
@@ -387,7 +397,7 @@ for epoch in range(epochs):
         label = label.to(device)
         label_pred = model(X)
         label = torch.unsqueeze(label,dim=1)
-        loss = loss_fn(label, label_pred) + model.l1_loss()
+        loss = loss_fn(label, label_pred) #+ model.l1_loss()
         loss.backward()
         optimizer.step()
         run.log({"loss": loss.item(), "epoch": epoch,"L1 loss": model.l1_loss()})
