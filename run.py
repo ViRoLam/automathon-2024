@@ -13,6 +13,7 @@ from tqdm import tqdm
 import csv
 import timm
 import wandb
+import cv2 
 
 from PIL import Image
 import torchvision.transforms.v2 as transforms
@@ -193,6 +194,13 @@ class VideoDataset(Dataset):
         video_path = os.path.join(self.root_dir, self.video_files[idx])
         #video, audio, info = io.read_video(video_path, pts_unit='sec')
         #video = extract_frames(video_path)
+        
+        '''
+        Ici on va lire la vidéo et extraire les têtes, puis les redimensionner en 64x64
+        '''
+        
+        
+        
         video = torch.load(video_path)
 
         """
@@ -278,9 +286,9 @@ class CNNVideoClassifier(nn.Module):
         self.fc1 = nn.Linear(64*64*32*3, 512)
         self.fc2 = nn.Linear(512, num_classes-1)
 
-        self.relu = nn.ReLU()
+        self.relu = nn.LeakyReLU()
         
-        self.drop = nn.Dropout(0.5)
+        self.drop = nn.Dropout(0.2)
 
     def forward(self, x):
         x = self.relu(self.bn1(self.conv1(x)))
@@ -343,7 +351,7 @@ loss_fn = nn.MSELoss()
 #model = DeepfakeDetector().to(device)
 print("Training model:")
 summary(model, input_size=(batch_size, 10, 3, 256, 256))
-epochs = 5
+epochs = 2
 loader = DataLoader(train_dataset, batch_size=batch_size, shuffle=True)
 
 early_stopping = EarlyStopping(patience=3, verbose=True)
