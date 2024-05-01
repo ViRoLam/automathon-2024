@@ -291,15 +291,15 @@ class CNNVideoClassifier(nn.Module):
         
         self.sigmoid = nn.Sigmoid()
         
-        self.l1_lambda = 0.001
+        self.l1_lambda = 0.0005
 
     def forward(self, x):
         x = self.relu(self.bn1(self.conv1(x)))
         x = self.pool1(x)
         x = self.relu(self.bn2(self.conv2(x)))
         x = self.pool2(x)
-        #x = self.relu(self.bn3(self.conv3(x)))
-        #x = self.pool3(x)
+        x = self.relu(self.bn3(self.conv3(x)))
+        x = self.pool3(x)
         
         # Flatten the output for the fully connected layer
         x = self.drop(x)
@@ -382,7 +382,7 @@ for epoch in range(epochs):
         label = label.to(device)
         label_pred = model(X)
         label = torch.unsqueeze(label,dim=1)
-        loss = loss_fn(label, label_pred)
+        loss = loss_fn(label, label_pred) + model.l1_loss()
         loss.backward()
         score = 0
         optimizer.step()
