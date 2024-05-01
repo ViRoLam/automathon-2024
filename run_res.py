@@ -282,7 +282,7 @@ for epoch in range(epochs):
         loss = loss_fn(label, label_pred) #+ model.l1_loss()
         loss.backward()
         optimizer.step()
-        run.log({"loss": loss.item(), "epoch": epoch,"L1 loss": model.l1_loss()})
+        run.log({"loss": loss.item(), "epoch": epoch})
         
 
 ## TEST
