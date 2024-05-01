@@ -304,8 +304,9 @@ print("Training model:")
 summary(model, input_size=(batch_size, 10, 3, 256, 256))
 epochs = 5
 loader = DataLoader(train_dataset, batch_size=batch_size, shuffle=True)
+'''
 for p in model.parameters():
-    p.requires_grad = False
+    p.requires_grad = False'''
 #loader = DataLoader(experimental_dataset, batch_size=2, shuffle=True)
 
 print("Training...")
