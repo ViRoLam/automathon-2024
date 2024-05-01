@@ -219,10 +219,16 @@ class VideoDataset(Dataset):
             return video, label, ID
 
 
+# Define transformations
+transform = transforms.Compose([
+    transforms.Resize((224, 224)),
+    transforms.ToTensor(),
+    transforms.Normalize(mean=[0.485, 0.456, 0.406], std=[0.229, 0.224, 0.225]),
+])
 
-train_dataset = VideoDataset(dataset_dir, dataset_choice="train", nb_frames=nb_frames)
-test_dataset = VideoDataset(dataset_dir, dataset_choice="test", nb_frames=nb_frames)
-experimental_dataset = VideoDataset(dataset_dir, dataset_choice="experimental", nb_frames=nb_frames)
+train_dataset = VideoDataset(dataset_dir, dataset_choice="train", nb_frames=nb_frames, transform=transform)
+test_dataset = VideoDataset(dataset_dir, dataset_choice="test", nb_frames=nb_frames, transform=transform)
+experimental_dataset = VideoDataset(dataset_dir, dataset_choice="experimental", nb_frames=nb_frames, transform=transform)
 
 
 # MODELE
