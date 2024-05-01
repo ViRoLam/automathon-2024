@@ -297,7 +297,7 @@ device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 model = CNNVideoClassifier(num_classes=2).to(device)  # Change num_classes according to your dataset
 # Define loss function and optimizer
 optimizer = torch.optim.Adam(model.parameters(), lr=0.001)
-batch_size = 1
+batch_size = 32
 loss_fn = nn.MSELoss()
 #model = DeepfakeDetector().to(device)
 print("Training model:")
