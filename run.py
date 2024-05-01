@@ -238,7 +238,7 @@ class CNNVideoClassifier(nn.Module):
 
         # The output from the last pooling layer will have dimensions [batch_size, 64, 10, 32, 32]
         self.fc1 = nn.Linear(64*64*32*3, 512)
-        self.fc2 = nn.Linear(512, num_classes)
+        self.fc2 = nn.Linear(512, num_classes-1)
 
         self.relu = nn.ReLU()
 
