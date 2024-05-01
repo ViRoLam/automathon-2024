@@ -1,0 +1,2029 @@
+
+Training model:
+==========================================================================================
+Layer (type:depth-idx)                   Output Shape              Param #
+==========================================================================================
+CNNVideoClassifier                       [32, 1]                   55,488
+├─Conv3d: 1-1                            [32, 16, 3, 256, 256]     4,336
+├─BatchNorm3d: 1-2                       [32, 16, 3, 256, 256]     32
+├─ReLU: 1-3                              [32, 16, 3, 256, 256]     --
+├─MaxPool3d: 1-4                         [32, 16, 3, 128, 128]     --
+├─Conv3d: 1-5                            [32, 32, 3, 128, 128]     13,856
+├─BatchNorm3d: 1-6                       [32, 32, 3, 128, 128]     64
+├─ReLU: 1-7                              [32, 32, 3, 128, 128]     --
+├─MaxPool3d: 1-8                         [32, 32, 3, 64, 64]       --
+├─Linear: 1-9                            [32, 512]                 201,327,104
+├─ReLU: 1-10                             [32, 512]                 --
+├─Linear: 1-11                           [32, 1]                   513
+==========================================================================================
+Total params: 201,401,393
+Trainable params: 201,401,393
+Non-trainable params: 0
+Total mult-adds (G): 55.52
+==========================================================================================
+Input size (MB): 251.66
+Forward/backward pass size (MB): 2416.05
+Params size (MB): 805.38
+Estimated Total Size (MB): 3473.09
+==========================================================================================
+Training...
+/raid/home/automathon_2024/account8/.local/lib/python3.10/site-packages/torch/nn/modules/conv.py:605: UserWarning: Plan failed with a cudnnException: CUDNN_BACKEND_EXECUTION_PLAN_DESCRIPTOR: cudnnFinalize Descriptor Failed cudnn_status: CUDNN_STATUS_NOT_SUPPORTED (Triggered internally at ../aten/src/ATen/native/cudnn/Conv_v8.cpp:919.)
+  return F.conv3d(
+  1%|          | 2/310 [00:01<03:34,  1.44it/s]
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+
+  2%|▏         | 5/310 [00:02<02:50,  1.79it/s]
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+
+  3%|▎         | 9/310 [00:05<02:48,  1.78it/s]
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+
+  4%|▍         | 12/310 [00:06<02:58,  1.67it/s]
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+
+  5%|▌         | 16/310 [00:09<02:42,  1.81it/s]
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+
+  6%|▋         | 20/310 [00:11<02:29,  1.94it/s]
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+
+  8%|▊         | 24/310 [00:13<02:30,  1.90it/s]
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+
+  9%|▊         | 27/310 [00:14<02:32,  1.86it/s]
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+
+ 10%|▉         | 30/310 [00:17<02:55,  1.59it/s]
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+
+ 11%|█         | 34/310 [00:19<02:39,  1.73it/s]
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+
+ 12%|█▏        | 37/310 [00:21<02:43,  1.67it/s]
+X_shape: torch.Size([32, 10, 3, 256, 256])
+
+ 13%|█▎        | 40/310 [00:23<02:51,  1.58it/s]
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+
+ 14%|█▍        | 44/310 [00:25<02:25,  1.83it/s]
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+
+ 15%|█▌        | 48/310 [00:27<02:13,  1.97it/s]
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+
+ 16%|█▋        | 51/310 [00:29<02:14,  1.93it/s]
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+
+ 18%|█▊        | 55/310 [00:31<02:19,  1.83it/s]
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+
+ 19%|█▉        | 59/310 [00:33<02:13,  1.87it/s]
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+
+ 20%|██        | 63/310 [00:35<02:01,  2.03it/s]
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+
+ 22%|██▏       | 67/310 [00:37<01:57,  2.07it/s]
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+
+ 23%|██▎       | 71/310 [00:39<02:08,  1.86it/s]
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+
+ 24%|██▍       | 75/310 [00:41<02:03,  1.91it/s]
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+
+ 25%|██▌       | 79/310 [00:43<01:53,  2.04it/s]
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+
+ 26%|██▋       | 82/310 [00:45<02:03,  1.85it/s]
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+
+ 28%|██▊       | 86/310 [00:47<01:58,  1.90it/s]
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+
+ 29%|██▉       | 90/310 [00:49<02:00,  1.83it/s]
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+
+ 30%|███       | 93/310 [00:51<01:52,  1.93it/s]
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+
+ 31%|███▏      | 97/310 [00:53<02:08,  1.66it/s]
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+
+ 32%|███▏      | 100/310 [00:55<02:06,  1.66it/s]
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+
+ 34%|███▎      | 104/310 [00:57<01:54,  1.80it/s]
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+
+ 35%|███▍      | 107/310 [00:59<01:58,  1.72it/s]
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+
+ 36%|███▌      | 111/310 [01:01<01:41,  1.96it/s]
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+
+ 37%|███▋      | 115/310 [01:03<01:41,  1.93it/s]
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+
+ 38%|███▊      | 119/310 [01:05<01:42,  1.87it/s]
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+
+ 40%|███▉      | 123/310 [01:07<01:31,  2.05it/s]
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+
+ 41%|████      | 126/310 [01:08<01:32,  1.99it/s]
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+
+ 42%|████▏     | 130/310 [01:11<01:39,  1.80it/s]
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+
+ 43%|████▎     | 134/310 [01:13<01:27,  2.01it/s]
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+
+ 45%|████▍     | 138/310 [01:15<01:23,  2.06it/s]
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+
+ 46%|████▌     | 143/310 [01:17<01:20,  2.08it/s]
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+
+ 47%|████▋     | 146/310 [01:19<01:25,  1.91it/s]
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+
+ 48%|████▊     | 150/310 [01:21<01:22,  1.95it/s]
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+
+ 49%|████▉     | 153/310 [01:22<01:24,  1.86it/s]
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+
+ 50%|█████     | 156/310 [01:25<01:43,  1.48it/s]
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+
+ 52%|█████▏    | 161/310 [01:27<01:17,  1.91it/s]
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+
+ 53%|█████▎    | 165/310 [01:29<01:12,  2.01it/s]
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+
+ 55%|█████▍    | 169/310 [01:31<01:09,  2.02it/s]
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+
+ 55%|█████▌    | 172/310 [01:33<01:06,  2.08it/s]
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+
+ 56%|█████▋    | 175/310 [01:35<01:22,  1.63it/s]
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+
+ 57%|█████▋    | 177/310 [01:36<01:41,  1.31it/s]
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+
+ 58%|█████▊    | 180/310 [01:39<01:43,  1.26it/s]
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+
+ 59%|█████▉    | 184/310 [01:41<01:13,  1.71it/s]
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+
+ 61%|██████    | 188/310 [01:43<01:01,  1.97it/s]
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+
+ 62%|██████▏   | 192/310 [01:45<00:56,  2.10it/s]
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+
+ 64%|██████▎   | 197/310 [01:47<00:54,  2.09it/s]
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+
+ 65%|██████▍   | 200/310 [01:49<01:08,  1.60it/s]
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+
+ 65%|██████▌   | 203/310 [01:51<01:03,  1.68it/s]
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+
+ 67%|██████▋   | 207/310 [01:53<00:53,  1.94it/s]
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+
+ 68%|██████▊   | 211/310 [01:55<00:53,  1.84it/s]
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+
+ 69%|██████▉   | 214/310 [01:57<00:52,  1.82it/s]
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+
+ 70%|███████   | 218/310 [01:59<00:49,  1.88it/s]
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+
+ 72%|███████▏  | 222/310 [02:01<00:45,  1.95it/s]
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+
+ 73%|███████▎  | 225/310 [02:03<00:47,  1.79it/s]
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+
+ 74%|███████▎  | 228/310 [02:05<00:47,  1.73it/s]
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+
+ 75%|███████▍  | 232/310 [02:07<00:43,  1.79it/s]
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+
+ 76%|███████▌  | 236/310 [02:09<00:41,  1.79it/s]
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+
+ 77%|███████▋  | 240/310 [02:11<00:39,  1.76it/s]
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+
+ 78%|███████▊  | 243/310 [02:13<00:36,  1.86it/s]
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+
+ 80%|███████▉  | 247/310 [02:15<00:35,  1.79it/s]
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+
+ 81%|████████  | 251/310 [02:17<00:31,  1.86it/s]
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+
+ 82%|████████▏ | 254/310 [02:19<00:36,  1.51it/s]
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+
+ 83%|████████▎ | 257/310 [02:21<00:30,  1.73it/s]
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+
+ 84%|████████▍ | 261/310 [02:23<00:27,  1.78it/s]
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+
+ 85%|████████▌ | 264/310 [02:25<00:25,  1.81it/s]
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+
+ 86%|████████▋ | 268/310 [02:27<00:24,  1.73it/s]
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+
+ 87%|████████▋ | 271/310 [02:29<00:21,  1.79it/s]
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+
+ 89%|████████▊ | 275/310 [02:31<00:20,  1.70it/s]
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+
+ 90%|█████████ | 279/310 [02:33<00:17,  1.80it/s]
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+
+ 91%|█████████ | 282/310 [02:35<00:14,  1.87it/s]
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+
+ 92%|█████████▏| 286/310 [02:37<00:13,  1.79it/s]
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+
+ 93%|█████████▎| 289/310 [02:39<00:11,  1.79it/s]
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+
+ 95%|█████████▍| 293/310 [02:41<00:09,  1.88it/s]
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+
+ 96%|█████████▌| 297/310 [02:43<00:06,  1.86it/s]
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+
+ 97%|█████████▋| 301/310 [02:45<00:04,  1.89it/s]
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+
+ 98%|█████████▊| 304/310 [02:47<00:03,  1.83it/s]
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+
+ 99%|█████████▉| 308/310 [02:49<00:01,  1.76it/s]
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+100%|██████████| 310/310 [02:50<00:00,  1.82it/s]
+  0%|          | 1/310 [00:00<02:55,  1.76it/s]
+X_shape: torch.Size([26, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+
+  2%|▏         | 5/310 [00:02<02:53,  1.76it/s]
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+
+  3%|▎         | 8/310 [00:04<02:57,  1.70it/s]
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+
+X_shape: torch.Size([32, 10, 3, 256, 256])
+
+  4%|▍         | 13/310 [00:08<03:28,  1.42it/s]
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+
+  5%|▌         | 16/310 [00:10<03:24,  1.44it/s]
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+
+  6%|▋         | 20/310 [00:13<02:45,  1.75it/s]
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+
+  8%|▊         | 24/310 [00:15<02:29,  1.91it/s]
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+
+  9%|▉         | 28/310 [00:16<02:20,  2.01it/s]
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+
+ 10%|█         | 32/310 [00:19<02:21,  1.97it/s]
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+
+ 11%|█         | 34/310 [00:20<03:15,  1.41it/s]
+X_shape: torch.Size([32, 10, 3, 256, 256])
+
+ 12%|█▏        | 38/310 [00:23<02:37,  1.73it/s]
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+
+ 14%|█▎        | 42/310 [00:24<02:15,  1.97it/s]
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+
+ 15%|█▍        | 46/310 [00:26<02:06,  2.08it/s]
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+
+ 16%|█▌        | 50/310 [00:28<02:03,  2.10it/s]
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+
+ 18%|█▊        | 55/310 [00:31<01:56,  2.18it/s]
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+
+ 19%|█▉        | 59/310 [00:32<01:56,  2.15it/s]
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+
+ 20%|██        | 63/310 [00:34<02:03,  2.00it/s]
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+
+ 21%|██▏       | 66/310 [00:36<02:14,  1.81it/s]
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+
+ 22%|██▏       | 69/310 [00:38<02:12,  1.82it/s]
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+
+ 24%|██▎       | 73/310 [00:40<02:14,  1.76it/s]
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+
+ 25%|██▍       | 77/310 [00:42<02:07,  1.83it/s]
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+
+ 26%|██▌       | 80/310 [00:45<02:41,  1.43it/s]
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+
+ 26%|██▋       | 82/310 [00:46<02:31,  1.51it/s]
+X_shape: torch.Size([32, 10, 3, 256, 256])
+
+ 27%|██▋       | 85/310 [00:49<02:47,  1.35it/s]
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+
+ 28%|██▊       | 88/310 [00:51<02:28,  1.49it/s]
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+
+ 29%|██▉       | 91/310 [00:52<02:11,  1.66it/s]
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+
+ 31%|███       | 95/310 [00:54<01:55,  1.87it/s]
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+
+ 32%|███▏      | 99/310 [00:56<01:48,  1.95it/s]
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+
+ 33%|███▎      | 103/310 [00:59<01:53,  1.82it/s]
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+
+ 34%|███▍      | 106/310 [01:00<01:52,  1.82it/s]
+X_shape: torch.Size([32, 10, 3, 256, 256])
+
+ 35%|███▌      | 109/310 [01:03<02:19,  1.44it/s]
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+
+ 36%|███▋      | 113/310 [01:04<01:43,  1.91it/s]
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+
+ 38%|███▊      | 117/310 [01:06<01:36,  2.00it/s]
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+
+ 39%|███▉      | 121/310 [01:09<01:44,  1.81it/s]
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+
+ 40%|████      | 124/310 [01:11<01:53,  1.64it/s]
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+
+ 41%|████▏     | 128/310 [01:13<01:36,  1.88it/s]
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+
+ 43%|████▎     | 132/310 [01:15<01:31,  1.94it/s]
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+
+ 44%|████▎     | 135/310 [01:17<01:44,  1.67it/s]
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+
+ 45%|████▍     | 138/310 [01:18<01:40,  1.71it/s]
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+
+ 46%|████▌     | 142/310 [01:21<01:35,  1.76it/s]
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+
+ 47%|████▋     | 145/310 [01:22<01:33,  1.77it/s]
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+
+ 48%|████▊     | 149/310 [01:25<01:31,  1.76it/s]
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+
+ 49%|████▉     | 152/310 [01:26<01:32,  1.71it/s]
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+
+ 50%|█████     | 155/310 [01:29<02:00,  1.29it/s]
+X_shape: torch.Size([32, 10, 3, 256, 256])
+
+ 51%|█████     | 157/310 [01:30<01:49,  1.40it/s]
+X_shape: torch.Size([32, 10, 3, 256, 256])
+
+ 52%|█████▏    | 160/310 [01:33<01:55,  1.30it/s]
+X_shape: torch.Size([32, 10, 3, 256, 256])
+
+ 52%|█████▏    | 162/310 [01:35<02:03,  1.20it/s]
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+
+ 53%|█████▎    | 165/310 [01:36<01:41,  1.42it/s]
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+
+ 55%|█████▍    | 169/310 [01:39<01:27,  1.61it/s]
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+
+ 55%|█████▌    | 171/310 [01:40<01:25,  1.62it/s]
+X_shape: torch.Size([32, 10, 3, 256, 256])
+
+ 56%|█████▌    | 174/310 [01:42<01:32,  1.47it/s]
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+
+ 57%|█████▋    | 178/310 [01:45<01:22,  1.61it/s]
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+
+ 58%|█████▊    | 180/310 [01:46<01:35,  1.37it/s]
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+
+ 59%|█████▉    | 184/310 [01:49<01:11,  1.76it/s]
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+
+ 61%|██████    | 188/310 [01:51<01:09,  1.76it/s]
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+
+ 62%|██████▏   | 191/310 [01:52<01:06,  1.79it/s]
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+
+ 63%|██████▎   | 195/310 [01:55<01:05,  1.76it/s]
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+
+ 64%|██████▍   | 199/310 [01:57<01:01,  1.81it/s]
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+
+ 65%|██████▌   | 202/310 [01:59<00:59,  1.82it/s]
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+
+ 66%|██████▋   | 206/310 [02:01<00:54,  1.90it/s]
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+
+ 68%|██████▊   | 210/310 [02:03<00:55,  1.80it/s]
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+
+ 69%|██████▊   | 213/310 [02:05<00:53,  1.82it/s]
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+
+ 70%|███████   | 217/310 [02:07<00:50,  1.83it/s]
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+
+ 71%|███████▏  | 221/310 [02:09<00:47,  1.89it/s]
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+
+ 72%|███████▏  | 224/310 [02:11<00:49,  1.73it/s]
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+
+ 73%|███████▎  | 226/310 [02:12<00:55,  1.52it/s]
+
+ 74%|███████▎  | 228/310 [02:14<01:10,  1.16it/s]
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+
+ 75%|███████▍  | 231/310 [02:17<01:00,  1.30it/s]
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+
+ 76%|███████▌  | 235/310 [02:19<00:46,  1.63it/s]
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+
+ 77%|███████▋  | 238/310 [02:21<00:45,  1.57it/s]
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+
+ 78%|███████▊  | 241/310 [02:22<00:38,  1.78it/s]
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+
+ 79%|███████▉  | 245/310 [02:25<00:36,  1.78it/s]
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+
+ 80%|████████  | 249/310 [02:27<00:32,  1.90it/s]
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+
+ 81%|████████▏ | 252/310 [02:29<00:36,  1.60it/s]
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+
+ 82%|████████▏ | 254/310 [02:30<00:42,  1.32it/s]
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+
+ 83%|████████▎ | 258/310 [02:33<00:32,  1.62it/s]
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+
+ 85%|████████▍ | 262/310 [02:35<00:24,  1.92it/s]
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+
+ 86%|████████▌ | 266/310 [02:37<00:22,  1.92it/s]
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+
+ 87%|████████▋ | 270/310 [02:39<00:20,  1.97it/s]
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+
+ 88%|████████▊ | 274/310 [02:41<00:18,  1.94it/s]
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+
+ 89%|████████▉ | 277/310 [02:43<00:17,  1.93it/s]
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+
+ 90%|█████████ | 280/310 [02:45<00:18,  1.64it/s]
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+
+ 92%|█████████▏| 284/310 [02:47<00:14,  1.86it/s]
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+
+ 93%|█████████▎| 288/310 [02:49<00:11,  1.86it/s]
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+
+ 94%|█████████▍| 292/310 [02:51<00:09,  1.89it/s]
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+
+ 95%|█████████▌| 296/310 [02:53<00:07,  1.80it/s]
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+
+ 97%|█████████▋| 300/310 [02:55<00:05,  1.98it/s]
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+
+ 98%|█████████▊| 303/310 [02:57<00:03,  1.82it/s]
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+
+ 99%|█████████▉| 307/310 [02:59<00:01,  1.88it/s]
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+100%|██████████| 310/310 [03:01<00:00,  1.71it/s]
+  0%|          | 0/310 [00:00<?, ?it/s]
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([26, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+
+  1%|▏         | 4/310 [00:02<02:55,  1.74it/s]
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+
+  2%|▏         | 7/310 [00:04<02:46,  1.81it/s]
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+
+  4%|▎         | 11/310 [00:06<02:45,  1.81it/s]
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+
+  5%|▍         | 15/310 [00:08<02:33,  1.93it/s]
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+
+  6%|▌         | 19/310 [00:10<02:33,  1.90it/s]
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+
+  7%|▋         | 22/310 [00:12<02:47,  1.72it/s]
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+
+  8%|▊         | 25/310 [00:14<03:07,  1.52it/s]
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+
+  9%|▉         | 29/310 [00:16<02:33,  1.84it/s]
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+
+ 11%|█         | 33/310 [00:18<02:27,  1.87it/s]
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+
+ 12%|█▏        | 37/310 [00:20<02:16,  2.00it/s]
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+
+ 13%|█▎        | 41/310 [00:22<02:13,  2.01it/s]
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+
+ 14%|█▍        | 44/310 [00:24<02:14,  1.98it/s]
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+
+ 15%|█▌        | 48/310 [00:26<02:13,  1.97it/s]
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+
+ 17%|█▋        | 52/310 [00:28<02:12,  1.94it/s]
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+
+ 18%|█▊        | 56/310 [00:30<02:06,  2.02it/s]
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+
+ 19%|█▉        | 60/310 [00:32<02:02,  2.05it/s]
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+
+ 21%|██        | 64/310 [00:34<02:08,  1.92it/s]
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+
+ 22%|██▏       | 67/310 [00:36<02:19,  1.75it/s]
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+
+ 23%|██▎       | 71/310 [00:38<02:17,  1.74it/s]
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+
+ 24%|██▍       | 74/310 [00:40<02:06,  1.86it/s]
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+
+ 25%|██▌       | 78/310 [00:42<01:58,  1.96it/s]
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+
+ 26%|██▋       | 82/310 [00:44<01:55,  1.98it/s]
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+
+ 28%|██▊       | 86/310 [00:46<02:03,  1.82it/s]
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+
+ 29%|██▉       | 90/310 [00:48<01:51,  1.97it/s]
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+
+ 30%|███       | 94/310 [00:50<01:54,  1.88it/s]
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+
+ 31%|███▏      | 97/310 [00:52<01:47,  1.99it/s]
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+
+ 33%|███▎      | 101/310 [00:54<01:48,  1.93it/s]
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+
+ 34%|███▍      | 105/310 [00:56<01:53,  1.80it/s]
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+
+ 35%|███▍      | 108/310 [00:58<01:51,  1.81it/s]
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+
+ 36%|███▌      | 112/310 [01:00<01:50,  1.80it/s]
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+
+ 37%|███▋      | 115/310 [01:02<01:51,  1.74it/s]
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+
+ 38%|███▊      | 119/310 [01:04<01:54,  1.67it/s]
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+
+ 39%|███▉      | 122/310 [01:06<01:50,  1.70it/s]
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+
+ 41%|████      | 126/310 [01:08<01:41,  1.81it/s]
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+
+ 42%|████▏     | 130/310 [01:10<01:38,  1.83it/s]
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+
+ 43%|████▎     | 133/310 [01:12<01:36,  1.83it/s]
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+
+ 44%|████▍     | 137/310 [01:14<01:38,  1.76it/s]
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+
+ 45%|████▌     | 140/310 [01:16<01:32,  1.84it/s]
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+
+ 46%|████▋     | 144/310 [01:18<01:35,  1.75it/s]
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+
+ 48%|████▊     | 148/310 [01:20<01:26,  1.88it/s]
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+
+ 49%|████▉     | 152/310 [01:22<01:22,  1.92it/s]
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+
+ 50%|█████     | 155/310 [01:24<01:19,  1.95it/s]
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+
+ 51%|█████▏    | 159/310 [01:26<01:18,  1.92it/s]
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+
+ 53%|█████▎    | 163/310 [01:28<01:16,  1.93it/s]
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+
+ 54%|█████▍    | 167/310 [01:30<01:13,  1.96it/s]
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+
+ 55%|█████▌    | 171/310 [01:32<01:09,  1.99it/s]
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+
+ 56%|█████▋    | 175/310 [01:34<01:13,  1.84it/s]
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+
+ 58%|█████▊    | 179/310 [01:36<01:06,  1.96it/s]
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+
+ 59%|█████▉    | 183/310 [01:38<01:04,  1.96it/s]
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+
+ 60%|██████    | 187/310 [01:40<01:01,  1.99it/s]
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+
+ 62%|██████▏   | 191/310 [01:42<00:59,  2.00it/s]
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+
+ 63%|██████▎   | 194/310 [01:44<00:59,  1.95it/s]
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+
+ 64%|██████▍   | 198/310 [01:46<00:59,  1.89it/s]
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+
+ 65%|██████▍   | 201/310 [01:48<01:01,  1.76it/s]
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+
+ 66%|██████▌   | 205/310 [01:50<00:59,  1.76it/s]
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+
+ 67%|██████▋   | 209/310 [01:52<00:51,  1.94it/s]
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+
+ 69%|██████▊   | 213/310 [01:54<00:50,  1.92it/s]
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+
+ 70%|███████   | 217/310 [01:56<00:49,  1.89it/s]
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+
+ 71%|███████   | 220/310 [01:58<00:49,  1.82it/s]
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+
+ 72%|███████▏  | 224/310 [02:00<00:48,  1.79it/s]
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+
+ 74%|███████▎  | 228/310 [02:02<00:44,  1.83it/s]
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+
+ 75%|███████▍  | 232/310 [02:04<00:40,  1.91it/s]
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+
+ 76%|███████▌  | 235/310 [02:06<00:42,  1.78it/s]
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+
+ 77%|███████▋  | 239/310 [02:08<00:38,  1.85it/s]
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+
+ 78%|███████▊  | 243/310 [02:10<00:35,  1.91it/s]
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+
+ 79%|███████▉  | 246/310 [02:12<00:34,  1.87it/s]
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+
+ 81%|████████  | 250/310 [02:14<00:32,  1.87it/s]
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+
+ 82%|████████▏ | 254/310 [02:16<00:29,  1.91it/s]
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+
+ 83%|████████▎ | 258/310 [02:18<00:29,  1.77it/s]
+X_shape: torch.Size([32, 10, 3, 256, 256])
+
+ 84%|████████▍ | 260/310 [02:20<00:34,  1.46it/s]
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+
+ 85%|████████▌ | 264/310 [02:22<00:25,  1.78it/s]
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+
+ 86%|████████▌ | 267/310 [02:24<00:24,  1.74it/s]
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+
+ 87%|████████▋ | 271/310 [02:26<00:21,  1.83it/s]
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+
+ 89%|████████▊ | 275/310 [02:28<00:18,  1.90it/s]
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+
+ 90%|█████████ | 279/310 [02:30<00:16,  1.83it/s]
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+
+ 91%|█████████ | 282/310 [02:32<00:16,  1.67it/s]
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+
+ 92%|█████████▏| 286/310 [02:34<00:13,  1.77it/s]
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+
+ 93%|█████████▎| 289/310 [02:36<00:11,  1.76it/s]
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+
+ 95%|█████████▍| 293/310 [02:38<00:09,  1.88it/s]
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+
+ 96%|█████████▌| 297/310 [02:40<00:06,  1.92it/s]
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+
+ 97%|█████████▋| 301/310 [02:42<00:04,  1.94it/s]
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+
+ 98%|█████████▊| 304/310 [02:44<00:03,  1.82it/s]
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+
+ 99%|█████████▉| 308/310 [02:46<00:01,  1.80it/s]
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+100%|██████████| 310/310 [02:47<00:00,  1.85it/s]
+  1%|          | 2/310 [00:01<02:48,  1.83it/s]
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+
+  2%|▏         | 5/310 [00:02<02:35,  1.96it/s]
+X_shape: torch.Size([32, 10, 3, 256, 256])
+
+  3%|▎         | 9/310 [00:05<02:57,  1.70it/s]
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+
+  4%|▍         | 12/310 [00:06<02:39,  1.86it/s]
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+
+  5%|▌         | 16/310 [00:08<02:35,  1.89it/s]
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+
+  6%|▋         | 20/310 [00:11<02:32,  1.90it/s]
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+
+  8%|▊         | 24/310 [00:13<02:33,  1.86it/s]
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+
+  9%|▉         | 28/310 [00:15<02:25,  1.94it/s]
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+
+ 10%|█         | 31/310 [00:17<02:29,  1.87it/s]
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+
+ 11%|█▏        | 35/310 [00:19<02:30,  1.83it/s]
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+
+ 13%|█▎        | 39/310 [00:21<02:26,  1.84it/s]
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+
+ 14%|█▎        | 42/310 [00:23<02:36,  1.71it/s]
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+
+ 15%|█▍        | 45/310 [00:25<02:39,  1.66it/s]
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+
+ 15%|█▌        | 48/310 [00:26<02:39,  1.65it/s]
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+
+ 17%|█▋        | 52/310 [00:29<02:27,  1.75it/s]
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+
+ 18%|█▊        | 56/310 [00:31<02:15,  1.88it/s]
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+
+ 19%|█▉        | 60/310 [00:33<02:11,  1.91it/s]
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+
+ 20%|██        | 62/310 [00:34<02:57,  1.39it/s]
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+
+ 21%|██▏       | 66/310 [00:37<02:18,  1.76it/s]
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+
+ 23%|██▎       | 70/310 [00:39<02:25,  1.65it/s]
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+
+ 23%|██▎       | 72/310 [00:40<02:31,  1.57it/s]
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+
+ 25%|██▍       | 76/310 [00:43<02:12,  1.76it/s]
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+
+ 26%|██▌       | 80/310 [00:45<02:02,  1.88it/s]
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+
+ 27%|██▋       | 84/310 [00:47<01:56,  1.93it/s]
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+
+ 28%|██▊       | 88/310 [00:49<01:55,  1.92it/s]
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+
+ 29%|██▉       | 91/310 [00:51<02:00,  1.82it/s]
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+
+ 31%|███       | 95/310 [00:53<01:55,  1.87it/s]
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+
+ 32%|███▏      | 99/310 [00:55<01:54,  1.84it/s]
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+
+ 33%|███▎      | 103/310 [00:57<01:49,  1.88it/s]
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+
+ 34%|███▍      | 106/310 [00:59<01:47,  1.89it/s]
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+
+ 35%|███▌      | 110/310 [01:01<01:45,  1.89it/s]
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+
+ 37%|███▋      | 114/310 [01:03<01:47,  1.82it/s]
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+
+ 38%|███▊      | 117/310 [01:05<01:49,  1.76it/s]
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+
+ 39%|███▊      | 120/310 [01:07<02:13,  1.43it/s]
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+
+ 40%|███▉      | 123/310 [01:09<01:55,  1.61it/s]
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+
+ 41%|████      | 126/310 [01:11<01:58,  1.55it/s]
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+
+ 42%|████▏     | 129/310 [01:12<01:47,  1.69it/s]
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+
+ 43%|████▎     | 133/310 [01:14<01:35,  1.85it/s]
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+
+ 44%|████▍     | 136/310 [01:16<01:34,  1.85it/s]
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+
+ 45%|████▌     | 140/310 [01:18<01:27,  1.93it/s]
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+
+ 46%|████▋     | 144/310 [01:20<01:32,  1.79it/s]
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+
+ 47%|████▋     | 146/310 [01:22<01:55,  1.42it/s]
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+
+ 48%|████▊     | 150/310 [01:24<01:34,  1.69it/s]
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+
+ 50%|████▉     | 154/310 [01:26<01:24,  1.85it/s]
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+
+ 51%|█████     | 158/310 [01:28<01:17,  1.96it/s]
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+
+ 52%|█████▏    | 162/310 [01:30<01:13,  2.00it/s]
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+
+ 54%|█████▎    | 166/310 [01:32<01:13,  1.95it/s]
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+
+ 55%|█████▍    | 170/310 [01:34<01:11,  1.95it/s]
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+
+ 56%|█████▌    | 174/310 [01:36<01:08,  2.00it/s]
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+
+ 57%|█████▋    | 177/310 [01:38<01:15,  1.75it/s]
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+
+ 58%|█████▊    | 181/310 [01:40<01:07,  1.91it/s]
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+
+ 60%|█████▉    | 185/310 [01:42<01:07,  1.86it/s]
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+
+ 61%|██████    | 188/310 [01:44<01:07,  1.82it/s]
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+
+ 62%|██████▏   | 192/310 [01:46<01:04,  1.83it/s]
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+
+ 63%|██████▎   | 196/310 [01:48<00:59,  1.92it/s]
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+
+ 65%|██████▍   | 200/310 [01:50<00:54,  2.00it/s]
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+
+ 66%|██████▌   | 204/310 [01:52<00:53,  1.99it/s]
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+
+ 67%|██████▋   | 208/310 [01:54<00:52,  1.94it/s]
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+
+ 68%|██████▊   | 212/310 [01:57<00:51,  1.91it/s]
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+
+ 69%|██████▉   | 215/310 [01:58<00:47,  1.98it/s]
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+
+ 71%|███████   | 219/310 [02:00<00:47,  1.93it/s]
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+
+ 72%|███████▏  | 223/310 [02:02<00:46,  1.88it/s]
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+
+ 73%|███████▎  | 227/310 [02:04<00:43,  1.90it/s]
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+
+ 75%|███████▍  | 231/310 [02:06<00:41,  1.92it/s]
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+
+ 75%|███████▌  | 234/310 [02:08<00:39,  1.91it/s]
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+
+ 76%|███████▋  | 237/310 [02:10<00:44,  1.63it/s]
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+
+ 78%|███████▊  | 241/310 [02:12<00:37,  1.84it/s]
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+
+ 79%|███████▉  | 245/310 [02:14<00:34,  1.90it/s]
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+
+ 80%|████████  | 249/310 [02:16<00:32,  1.88it/s]
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+
+ 82%|████████▏ | 253/310 [02:18<00:28,  2.02it/s]
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+
+ 83%|████████▎ | 257/310 [02:21<00:28,  1.88it/s]
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+
+ 84%|████████▍ | 260/310 [02:22<00:26,  1.90it/s]
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+
+ 85%|████████▌ | 264/310 [02:24<00:23,  1.93it/s]
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+
+ 86%|████████▋ | 268/310 [02:26<00:21,  1.92it/s]
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+
+ 88%|████████▊ | 272/310 [02:28<00:19,  1.90it/s]
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+
+ 89%|████████▉ | 276/310 [02:30<00:17,  1.90it/s]
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+
+ 90%|█████████ | 279/310 [02:32<00:17,  1.74it/s]
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+
+ 91%|█████████▏| 283/310 [02:35<00:16,  1.66it/s]
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+
+ 92%|█████████▏| 286/310 [02:36<00:14,  1.71it/s]
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+
+ 94%|█████████▎| 290/310 [02:39<00:10,  1.84it/s]
+X_shape: torch.Size([32, 10, 3, 256, 256])
+
+ 95%|█████████▍| 293/310 [02:41<00:10,  1.57it/s]
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+
+ 95%|█████████▌| 296/310 [02:42<00:07,  1.77it/s]
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+
+ 97%|█████████▋| 300/310 [02:44<00:05,  1.82it/s]
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+
+ 98%|█████████▊| 304/310 [02:46<00:03,  1.91it/s]
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+
+ 99%|█████████▉| 308/310 [02:49<00:01,  1.91it/s]
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+100%|██████████| 310/310 [02:50<00:00,  1.82it/s]
+  1%|          | 2/310 [00:01<02:50,  1.81it/s]
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+
+  2%|▏         | 5/310 [00:02<02:42,  1.87it/s]
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+
+  3%|▎         | 9/310 [00:04<02:35,  1.94it/s]
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+
+  4%|▍         | 13/310 [00:06<02:33,  1.93it/s]
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+
+  5%|▌         | 17/310 [00:08<02:38,  1.85it/s]
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+
+  7%|▋         | 21/310 [00:10<02:31,  1.90it/s]
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+
+  8%|▊         | 25/310 [00:13<02:28,  1.91it/s]
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+
+  9%|▉         | 29/310 [00:15<02:29,  1.89it/s]
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+
+ 10%|█         | 32/310 [00:16<02:32,  1.83it/s]
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+
+ 12%|█▏        | 36/310 [00:18<02:22,  1.93it/s]
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+
+ 13%|█▎        | 40/310 [00:20<02:17,  1.97it/s]
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+
+ 14%|█▍        | 43/310 [00:22<02:31,  1.76it/s]
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+
+ 15%|█▌        | 47/310 [00:24<02:16,  1.93it/s]
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+
+ 16%|█▋        | 51/310 [00:26<02:15,  1.91it/s]
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+
+ 18%|█▊        | 55/310 [00:29<02:16,  1.87it/s]
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+
+ 19%|█▉        | 59/310 [00:31<02:09,  1.93it/s]
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+
+ 20%|██        | 63/310 [00:33<02:09,  1.91it/s]
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+
+ 21%|██▏       | 66/310 [00:34<02:05,  1.95it/s]
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+
+ 23%|██▎       | 70/310 [00:36<02:07,  1.89it/s]
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+
+ 24%|██▍       | 74/310 [00:38<02:01,  1.94it/s]
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+
+ 25%|██▌       | 78/310 [00:41<01:59,  1.95it/s]
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+
+ 26%|██▋       | 82/310 [00:43<01:57,  1.94it/s]
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+
+ 27%|██▋       | 85/310 [00:44<01:55,  1.95it/s]
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+
+ 29%|██▊       | 89/310 [00:46<01:59,  1.84it/s]
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+
+ 30%|███       | 93/310 [00:49<01:58,  1.83it/s]
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+
+ 31%|███       | 96/310 [00:50<01:53,  1.89it/s]
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+
+ 32%|███▏      | 99/310 [00:52<02:28,  1.42it/s]
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+
+ 33%|███▎      | 103/310 [00:55<01:59,  1.73it/s]
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+
+ 34%|███▍      | 106/310 [00:56<01:48,  1.88it/s]
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+
+ 36%|███▌      | 111/310 [00:59<01:40,  1.99it/s]
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+
+ 37%|███▋      | 114/310 [01:00<01:42,  1.91it/s]
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+
+ 38%|███▊      | 118/310 [01:02<01:38,  1.95it/s]
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+
+ 39%|███▉      | 122/310 [01:04<01:42,  1.84it/s]
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+
+ 41%|████      | 126/310 [01:07<01:37,  1.88it/s]
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+
+ 42%|████▏     | 130/310 [01:09<01:34,  1.90it/s]
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+
+ 43%|████▎     | 134/310 [01:11<01:29,  1.97it/s]
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+
+ 45%|████▍     | 138/310 [01:13<01:27,  1.97it/s]
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+
+ 45%|████▌     | 141/310 [01:14<01:29,  1.89it/s]
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+
+ 47%|████▋     | 145/310 [01:16<01:29,  1.84it/s]
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+
+ 47%|████▋     | 147/310 [01:18<01:55,  1.41it/s]
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+
+ 49%|████▊     | 151/310 [01:20<01:33,  1.70it/s]
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+
+ 50%|█████     | 155/310 [01:22<01:21,  1.90it/s]
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+
+ 51%|█████     | 158/310 [01:24<01:29,  1.70it/s]
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+
+ 52%|█████▏    | 162/310 [01:27<01:21,  1.81it/s]
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+
+ 53%|█████▎    | 165/310 [01:29<01:37,  1.49it/s]
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+
+ 55%|█████▍    | 169/310 [01:31<01:14,  1.89it/s]
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+
+ 56%|█████▌    | 173/310 [01:33<01:08,  2.00it/s]
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+
+ 57%|█████▋    | 177/310 [01:35<01:05,  2.04it/s]
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+
+ 58%|█████▊    | 181/310 [01:37<01:02,  2.06it/s]
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+
+ 60%|█████▉    | 185/310 [01:39<01:02,  1.99it/s]
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+
+ 61%|██████    | 189/310 [01:40<00:59,  2.04it/s]
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+
+ 62%|██████▏   | 193/310 [01:43<00:58,  1.99it/s]
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+
+ 64%|██████▎   | 197/310 [01:45<00:57,  1.95it/s]
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+
+ 65%|██████▍   | 201/310 [01:47<00:54,  2.01it/s]
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+
+ 66%|██████▌   | 205/310 [01:49<00:52,  2.00it/s]
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+
+ 67%|██████▋   | 209/310 [01:51<00:54,  1.86it/s]
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+
+ 68%|██████▊   | 212/310 [01:53<01:01,  1.61it/s]
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+
+ 69%|██████▉   | 215/310 [01:54<00:56,  1.69it/s]
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+
+ 70%|███████   | 218/310 [01:57<01:00,  1.53it/s]
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+
+ 71%|███████▏  | 221/310 [01:58<00:55,  1.61it/s]
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+
+ 73%|███████▎  | 225/310 [02:01<00:47,  1.81it/s]
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+
+ 74%|███████▍  | 229/310 [02:03<00:42,  1.93it/s]
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+
+ 75%|███████▌  | 233/310 [02:05<00:39,  1.97it/s]
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+
+ 76%|███████▋  | 237/310 [02:07<00:40,  1.80it/s]
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+
+ 77%|███████▋  | 239/310 [02:08<00:41,  1.72it/s]
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+
+ 78%|███████▊  | 243/310 [02:11<00:39,  1.69it/s]
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+
+ 80%|███████▉  | 247/310 [02:13<00:32,  1.94it/s]
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+
+ 81%|████████  | 251/310 [02:15<00:28,  2.07it/s]
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+
+ 82%|████████▏ | 255/310 [02:17<00:27,  2.02it/s]
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+
+ 84%|████████▎ | 259/310 [02:19<00:25,  2.00it/s]
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+
+ 85%|████████▍ | 263/310 [02:21<00:23,  1.98it/s]
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+
+ 86%|████████▌ | 267/310 [02:23<00:24,  1.75it/s]
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+
+ 87%|████████▋ | 270/310 [02:24<00:21,  1.88it/s]
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+
+ 88%|████████▊ | 274/310 [02:27<00:22,  1.60it/s]
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+
+ 90%|████████▉ | 278/310 [02:29<00:17,  1.82it/s]
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+
+ 91%|█████████ | 281/310 [02:31<00:18,  1.55it/s]
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+
+ 92%|█████████▏| 284/310 [02:33<00:15,  1.68it/s]
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+
+ 93%|█████████▎| 287/310 [02:35<00:14,  1.60it/s]
+X_shape: torch.Size([32, 10, 3, 256, 256])
+
+ 94%|█████████▎| 290/310 [02:37<00:13,  1.49it/s]
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+
+ 95%|█████████▍| 294/310 [02:39<00:08,  1.79it/s]
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+
+ 96%|█████████▌| 298/310 [02:41<00:06,  1.94it/s]
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+
+ 97%|█████████▋| 302/310 [02:43<00:04,  1.97it/s]
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+
+ 98%|█████████▊| 305/310 [02:45<00:02,  1.78it/s]
+X_shape: torch.Size([32, 10, 3, 256, 256])
+X_shape: torch.Size([32, 10, 3, 256, 256])
+
+ 99%|█████████▉| 307/310 [02:46<00:02,  1.48it/s]
+X_shape: torch.Size([32, 10, 3, 256, 256])
+100%|██████████| 310/310 [02:48<00:00,  1.84it/s]
+  1%|          | 1/94 [00:00<00:30,  3.03it/s]
+X_shape: torch.Size([26, 10, 3, 256, 256])
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 98%|█████████▊| 92/94 [00:32<00:00,  2.74it/s]
+
+100%|██████████| 94/94 [00:33<00:00,  2.83it/s]
