@@ -235,10 +235,10 @@ class DeepfakeDetector(nn.Module):
 
 # LOGGING
 
-wandb.login(key="a446d513570a79c857317c3000584c5f6d6224f0")
+wandb.login(key="09f8b3f5e76020d7c21ddcfc5f20869c998b143e")
 
 run = wandb.init(
-    project="automathon"
+    project="PVP"
 )
 
 # ENTRAINEMENT
