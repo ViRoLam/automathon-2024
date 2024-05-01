@@ -231,6 +231,7 @@ class CNNVideoClassifier(nn.Module):
         self.bn2 = nn.BatchNorm3d(32)
         self.pool2 = nn.MaxPool3d(kernel_size=(1, 2, 2), stride=(1, 2, 2))
         
+        
         self.conv3 = nn.Conv3d(32, 64, kernel_size=(3, 3, 3), stride=(1, 1, 1), padding=(1, 1, 1))
         self.bn3 = nn.BatchNorm3d(64)
         self.pool3 = nn.MaxPool3d(kernel_size=(1, 2, 2), stride=(1, 2, 2))
@@ -246,8 +247,8 @@ class CNNVideoClassifier(nn.Module):
         x = self.pool1(x)
         x = self.relu(self.bn2(self.conv2(x)))
         x = self.pool2(x)
-        x = self.relu(self.bn3(self.conv3(x)))
-        x = self.pool3(x)
+        #x = self.relu(self.bn3(self.conv3(x)))
+        #x = self.pool3(x)
         
         # Flatten the output for the fully connected layer
         x = x.view(x.size(0), -1)  # Flatten preserving the batch dimension
